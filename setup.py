@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyabtest",
-    version="0.0.3",
+    version="0.1",
     author="Rama Badrinath",
     author_email="ramab1988@gmail.com",
-    description="A simple python package to calculate P-value after conducting an A/B test",
+    description="A simple tool to calculate P-value after conducting an A/B experiment",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ramab1988/pyabtest",
