@@ -1,10 +1,10 @@
 # Pyabtest
-Simple tool to calculate P-value after conducting an A/B experiment
+A simple tool to calculate P-value after conducting an A/B experiment
 
-## A/B experiment & Hypothesis testing
+### A/B experiment & Hypothesis testing
 Normally we run an A/B experiment to see whether a new model brings some improvement in the production metrics. After running the experiment for a fixed time period, we use hypothesis testing to scientifically come to a conclusion whether to accept the new feature or not. Usually, hypothesis testing has following components:
 
-**Null hypothesis**: New model does not bring any improvement
+**Null hypothesis**: New model does not bring any improvement  
 **Alternative hypothesis**: New model does bring some improvement
 
 This tool will be useful to calculate P-value to check whether we can reject the null hypothesis or not.
@@ -21,7 +21,7 @@ pip install pyabtest
 Following functionalities are exposed in this package
 
 
-## 1. Test for Sample Ratio Mismatch (SRM)
+### 1. Test for Sample Ratio Mismatch (SRM)
 This is a test to check whether we have created audience for control vs test in a truly random manner. If there is an SRM, we should discard the A/B test results as control and variant have different type of audience. For example, we can pass following numbers in control vs test to check for SRM.
 
 1. Number of male vs Number of female
@@ -43,7 +43,7 @@ This is a test to check whether we have created audience for control vs test in 
 **Test used**: Chi-squared Test
 
 
-## 2. Test for Binary Metric
+### 2. Test for Binary Metric
 
 This test can be used when when the result/action/feedback is binary & we want to see if variant observations are coming from a differant population when compared to control. For example, this test can be used in the following situations:
 
@@ -68,7 +68,7 @@ s=900, alpha=0.05)
 
 **Test used**: Chi-squared Test
 
-## 3. Test for Numeric Metric
+### 3. Test for Numeric Metric
 
 This test can be used for any generic numeric metric (Count or Fraction). We can use this test even if the observations do not follow a normal distribution. In general, this test does not assume anything about the distribution as it is a non-parametric test. Example metrics include:
 
@@ -108,4 +108,5 @@ dom.randint(100, size=(20)), alpha=0.05, no_of_samples=10000)
 
 
 ## Author
-- [Rama Badrinath](https://www.linkedin.com/in/rama-badrinath-00405712). Email: ramab1988@gmail.com
+1. [Rama Badrinath](https://www.linkedin.com/in/rama-badrinath-00405712)   
+Email: ramab1988@gmail.com
