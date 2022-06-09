@@ -102,7 +102,7 @@ This test can be used for any generic numeric metric (Count or Fraction). We can
 ## References
 1. **[Hypothesis testing](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)**
 2. **[Chi-squared test](https://en.wikipedia.org/wiki/Chi-squared_test)**
-3. **[Bootstrap test](https://en.wikipedia.org/wiki/Bootstrapping_(statistics))**
+3. **[Bootstrap test1](https://en.wikipedia.org/wiki/Bootstrapping_(statistics))**, **[Bootstrap test2](https://www.tau.ac.il/~saharon/StatisticsSeminar_files/Hypothesis.pdf)**
 
 
 ## Author
