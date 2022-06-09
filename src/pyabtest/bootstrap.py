@@ -24,12 +24,12 @@ def compute_bootstrap_statistic(
                 np.random.choice(
                     control_new_observations,
                     replace=True,
-                    size=len(control_new_observations),
+                    size=control_new_observations.size,
                 ),
                 np.random.choice(
                     variant_new_observations,
                     replace=True,
-                    size=len(variant_new_observations),
+                    size=variant_new_observations.size,
                 ),
             )
         )
