@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyabtest",
-    version="0.1.1",
+    version="0.2.0",
     author="Rama Badrinath",
     author_email="ramab1988@gmail.com",
     description="A simple tool to calculate P-value after conducting an A/B experiment",
@@ -22,6 +22,6 @@ setuptools.setup(
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
-    install_requires=["numpy", "scipy", "sklearn", "multiprocess"],
+    install_requires=["numpy", "scipy", "sklearn", "multiprocess", "numba"],
     python_requires=">=3.6",
 )
