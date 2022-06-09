@@ -1,6 +1,8 @@
 from numpy import random
 import numpy as np
 from numba import jit
+import warnings
+warnings.filterwarnings('ignore')
 
 
 @jit(nopython=True, parallel=True, fastmath=True)
