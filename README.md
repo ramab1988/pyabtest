@@ -31,6 +31,7 @@ This is a test to check whether we have created audience for control vs test in 
 5. Number of mobile users vs Number of desktop users
 
 **Input**: Control group 1 size, Control group 2 size, Variant group 1 size, Variant group 2 size
+
 **Output**: P-value, Alpha, Decision
 
 ``` python
@@ -56,6 +57,7 @@ This test can be used when when the result/action/feedback is binary & we want t
 7. Number of converted users vs Number of non-converted users
 
 **Input**: No. of success in Control, No. of failures in Control, No. of success in variant, No. of failures in variant
+
 **Output**: P-value, Alpha, Decision
 
 ``` python
@@ -83,6 +85,7 @@ This test can be used for any generic numeric metric (Count or Fraction). We can
 10. Successful sessions per unique user
 
 **Input**: Control array (Ex: Array containing no. of clicks for each user in control, order does not matter), Variant array (Ex: Array containing no. of clicks for each user in variant, order does not matter)
+
 **Output**: P-value, Alpha, Decision
 
 
@@ -107,4 +110,5 @@ This test can be used for any generic numeric metric (Count or Fraction). We can
 
 ## Author
 [Rama Badrinath](https://www.linkedin.com/in/rama-badrinath-00405712)
+
 Email: ramab1988@gmail.com
