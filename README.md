@@ -82,7 +82,7 @@ This test can be used for any generic numeric metric (Count or Fraction). We can
 9. Order value per unique user
 10. Successful sessions per unique user
 
-**Input**: Control array, Variant array
+**Input**: Control array (Ex: Array containing no. of clicks for each user in control, order does not matter), Variant array (Ex: Array containing no. of clicks for each user in variant, order does not matter)
 **Output**: P-value, Alpha, Decision
 
 
