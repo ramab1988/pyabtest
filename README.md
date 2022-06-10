@@ -89,7 +89,7 @@ This test can be used for any generic numeric metric (Count or Fraction). We can
 ``` python
 >>> import pyabtest
 >>> from numpy import random
->>> pyabtest.test_for_numeric_metric(control_observations=random.randint(100, size=(20)), variant_observations=random.randint(100, size=(20)), alpha=0.05, no_of_samples=10000)
+>>> pyabtest.test_for_numeric_metric(control_observations=random.randint(100, size=(20)), variant_observations=random.randint(100, size=(20)), alpha=0.05, no_of_samples=1000)
 {'P-value': 0.7411, 'Alpha value (significance level)': 0.05, 'Decision': 'Do not reject null hypothesis'}
 ```
 
