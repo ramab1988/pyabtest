@@ -1,10 +1,12 @@
 # Pyabtest
+
 A simple tool to calculate P-value after conducting an A/B experiment
 
 ### A/B experiment & Hypothesis testing
+
 Normally we run an A/B experiment to see whether a new model brings some improvement in the production metrics. After running the experiment for a fixed time period, we use hypothesis testing to scientifically come to a conclusion whether to accept the new feature or not. Usually, hypothesis testing has following components:
 
-**Null hypothesis**: New model does not bring any improvement  
+**Null hypothesis**: New model does not bring any improvement
 **Alternative hypothesis**: New model does bring some improvement
 
 This tool will be useful to calculate P-value to check whether we can reject the null hypothesis or not.
@@ -13,15 +15,16 @@ This tool will be useful to calculate P-value to check whether we can reject the
 
 Use the package manager `pip` to install pyabtest
 
-``` python
+```python
 pip install pyabtest
 ```
 
 ## Usage
+
 Following functionalities are exposed in this package
 
-
 ### 1. Test for Sample Ratio Mismatch (SRM)
+
 This is a test to check whether we have created audience for control vs test in a truly random manner. If there is an SRM, we should discard the A/B test results as control and variant have different type of audience. For example, we can pass following numbers in control vs test to check for SRM.
 
 1. Number of male vs Number of female
@@ -34,7 +37,7 @@ This is a test to check whether we have created audience for control vs test in 
 
 **Output**: P-value, Alpha, Decision
 
-``` python
+```python
 >>> import pyabtest
 >>> pyabtest.test_for_sample_ratio_mismatch(control_group1_size=1000,control_group2_size=2000,variant_group1_size=
 1010,variant_group2_size=1990,alpha=0.05)
@@ -42,7 +45,6 @@ This is a test to check whether we have created audience for control vs test in 
 ```
 
 **Test used**: Chi-squared Test
-
 
 ### 2. Test for Binary Metric
 
@@ -60,12 +62,11 @@ This test can be used when when the result/action/feedback is binary & we want t
 
 **Output**: P-value, Alpha, Decision
 
-``` python
+```python
 >>> import pyabtest
 >>> pyabtest.test_for_binary_metric(control_success=50, control_failures=1000, variant_success=40, variant_failures=900, alpha=0.05)
 {'P-value': 0.58718, 'Alpha value (significance level)': 0.05, 'Decision': 'Do not reject null hypothesis'}
 ```
-
 
 **Test used**: Chi-squared Test
 
@@ -88,27 +89,28 @@ This test can be used for any generic numeric metric (Count or Fraction). We can
 
 **Output**: P-value, Alpha, Decision
 
-
-``` python
+```python
 >>> import pyabtest
 >>> from numpy import random
->>> pyabtest.test_for_numeric_metric(control_observations=random.randint(100, size=(20)), variant_observations=random.randint(100, size=(20)), alpha=0.05, no_of_samples=1000)
+>>> pyabtest.test_for_numeric_metric(control_observations=random.randint(100, size=(20)), variant_observations=random.randint(100, size=(20)), test_type="ttest", alpha=0.05)
 {'P-value': 0.7411, 'Alpha value (significance level)': 0.05, 'Decision': 'Do not reject null hypothesis'}
 ```
 
-**Test used**: Bootstrap Test
+**Test used by default**: Welch's t-test. Pass test_type="bootstrap" if you want to use Bootstrap test instead of Welch's t-test.
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
 ## References
+
 1. **[Hypothesis testing](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)**
 2. **[Chi-squared test](https://en.wikipedia.org/wiki/Chi-squared_test)**
-3. **[Bootstrap test1](https://en.wikipedia.org/wiki/Bootstrapping_(statistics))**, **[Bootstrap test2](https://www.tau.ac.il/~saharon/StatisticsSeminar_files/Hypothesis.pdf)**
-
+3. **[Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test)**
+4. **[Bootstrap test1](<https://en.wikipedia.org/wiki/Bootstrapping_(statistics)>)**, **[Bootstrap test2](https://www.tau.ac.il/~saharon/StatisticsSeminar_files/Hypothesis.pdf)**
 
 ## Author
+
 [Rama Badrinath](https://www.linkedin.com/in/rama-badrinath-00405712)
 
 Email: ramab1988@gmail.com
