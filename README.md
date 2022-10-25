@@ -92,8 +92,9 @@ This test can be used for any generic numeric metric (Count or Fraction). We can
 ```python
 >>> import pyabtest
 >>> from numpy import random
+>>> random.seed(12)
 >>> pyabtest.test_for_numeric_metric(control_observations=random.randint(100, size=(20)), variant_observations=random.randint(100, size=(20)), test_type="ttest", alpha=0.05)
-{'P-value': 0.7411, 'Alpha value (significance level)': 0.05, 'Decision': 'Do not reject null hypothesis'}
+{'P-value': 0.18443, 'Alpha value (significance level)': 0.05, 'Decision': 'Do not reject null hypothesis'}
 ```
 
 **Test used by default**: Welch's t-test. Pass test_type="bootstrap" if you want to use Bootstrap test instead of Welch's t-test.
